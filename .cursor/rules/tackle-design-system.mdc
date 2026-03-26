@@ -1,0 +1,205 @@
+---
+description: Tackle.io design system rules — applied automatically to all design and UI prototyping work in this repo.
+globs: ["**/*.tsx", "**/*.ts", "**/*.css", "**/*.scss", "**/*.html"]
+alwaysApply: true
+---
+
+# Tackle.io Design & Prototype Execution Spec
+
+**Owner:** Design (Tackle.io, an AppDirect business unit)
+**Purpose:** Ensure all generated designs/prototypes are grounded in Tackle.io design tokens and components.
+**Primary Design Library (Figma):**
+https://www.figma.com/design/b88tCh5B2ujs1KYoJQsvOB/%E2%9A%9B%EF%B8%8F-Tackle-Design-Library?node-id=0-1&t=xpOhyCK3Lrz357je-1
+
+---
+
+## 1) Non-Negotiable Rules
+
+1. **Use only Tackle.io design library tokens and components** from the Figma file above.
+2. **Do not invent new visual styles** (color, elevation, spacing, typography, icon style) unless explicitly approved.
+3. **Prefer composition over creation:** build new UI by assembling existing components/patterns.
+4. **When uncertainty exists, choose an existing component variant** over custom behavior.
+5. **"Page - …" pages are composite guidance examples** (not base primitives). Use them to guide page-level structure and patterns.
+
+---
+
+## 2) Token Requirements
+
+Cursor must explicitly use tokens from these library pages:
+
+- `🌈 Color`
+- `🌈 Elevation`
+- `🌈 Iconography`
+- `🌈 Layout & Grid`
+- `🌈 Typography`
+
+### 2.1 Color Tokens
+- Source: `🌈 Color`
+- Use only semantic/system color tokens from the library.
+- Avoid hardcoded hex unless directly mapped to a library token.
+- Known style examples in file:
+  - `Neutral/White`
+  - `Neutral/Neutral 10`
+  - `NEUTRAL000`
+- Verified brand values from tackle.io and downstream.tackle.io:
+  - Primary dark navy: `#063649` (`--ast-global-color-0`)
+  - Deepest navy: `#002b41` (platform app theme-color)
+  - Brand teal: `#1fadad`
+  - Logo icon amber: `#FFB600`
+
+### 2.2 Elevation Tokens
+- Source: `🌈 Elevation`
+- Use defined elevation levels only:
+  - `100`
+  - `200`
+  - `300`
+  - `400`
+  - `500R`
+  - `500L`
+- Intent examples:
+  - `200`: hover/emphasis/menu overlays
+  - `300`: selected cards/rows
+  - `400`: alerts/modals/docs tooltips
+  - `500R`: right panel/drawer
+  - `500L`: left/filter panel
+
+### 2.3 Iconography Tokens
+- Source: `🌈 Iconography`
+- Use only icon sets and visual treatment from library categories:
+  - Warning & Information
+  - Tackle Domain
+  - Symbols
+  - Actions
+- Keep icon style, size rhythm, and color mapping aligned to tokenized usage.
+
+### 2.4 Layout & Grid Tokens
+- Source: `🌈 Layout & Grid`
+- Build page structure with layout primitives:
+  - `GlobalHeaderLayout`
+  - `PageHeaderLayout`
+  - `PageToolbarLayout`
+  - `ContentLayout`
+  - `LeftPanelLayout`
+  - `RightPanelLayout`
+  - `Grid` (12-column reference)
+- Follow existing spacing and paddings from component/layout variants.
+
+### 2.5 Typography Tokens
+- Source: `🌈 Typography`
+- Use tokenized text styles only (no ad-hoc font overrides).
+- Respect hierarchical usage for page title, section headers, body, helper, labels.
+- Known tokenized type set in file: `TextOpenSans` (and typography page guidance).
+- Platform app font: **Open Sans** (confirmed in downstream.tackle.io).
+
+---
+
+## 3) Approved Component Inventory (Use These)
+
+### Core Components
+- **Alert** (`Alert`)
+- **Banner** (`Banner`)
+- **Button family**
+  - `Button`
+  - `MenuButton`
+  - `IconButton`
+  - `ButtonGroup`
+- **Checkbox family**
+  - `Checkbox`
+  - `CheckboxGroup`
+- **ComboBox** (`ComboBox`)
+- **Dropdown** (`Dropdown`)
+- **Menu** (`Menu`)
+- **Modal family**
+  - `InfoModal`
+  - `ActionModal`
+  - `FormModal`
+  - `ModalOverlay`
+- **Navigation**
+  - `PrimaryNav`
+- **Page Title**
+  - `PageTitle`
+- **Radio family**
+  - `Radio`
+  - `RadioGroup`
+  - `RadioPrimitive`
+- **Switch family**
+  - `Switch`
+  - `SwitchGroup`
+- **Tabs patterns** (from `⚛️ Tabs` page)
+  - Platform Tabs
+  - Tackle Card Tabs
+  - Tackle Card Navigation Tabs
+- **Tackle Card**
+  - `Tackle Card`
+- **Text Field**
+  - `TextField`
+- **Tooltip family**
+  - `Tooltip`
+  - `DocsTooltip`
+- **Utility components**
+  - `Modal header`
+  - Plus patterns under Forms & Controls / Lists & Menus
+
+### Layout Components (Structural)
+- `GlobalHeaderLayout`
+- `PageHeaderLayout`
+- `PageToolbarLayout`
+- `ContentLayout`
+- `LeftPanelLayout`
+- `RightPanelLayout`
+- `Grid`
+
+### Token/Style Components
+- Elevation levels: `100`, `200`, `300`, `400`, `500R`, `500L`
+- Typography set: `TextOpenSans`
+
+---
+
+## 4) "Page - …" Composite Guidance Usage
+
+Pages prefixed with **`Page - `** are canonical examples of how to combine components/tokens for real workflows.
+
+Current examples include:
+- `Page - Co-Sell List view in Downstream`
+- `Page - MSFT Co-Sell Create form in Downstream`
+
+**Rule:** Reuse their composition patterns (header structure, form rhythm, content blocks, action placement) instead of inventing new page architecture.
+
+---
+
+## 5) Cursor Execution Workflow
+
+When generating/updating any design/prototype, Cursor must:
+
+1. Identify target use case and map to closest existing `Page -` composite example.
+2. Build skeleton with `Layout & Grid` components first.
+3. Populate UI only with approved components above.
+4. Apply only library tokens for color/elevation/type/iconography.
+5. Validate:
+   - No custom visual primitives
+   - No hardcoded styles outside token mappings
+   - No non-library components
+6. Return a concise implementation summary listing:
+   - Tokens used
+   - Components used
+   - Any assumptions/constraints
+
+---
+
+## 6) Quality Gate Checklist (Must Pass)
+
+- [ ] Figma library URL referenced and used as source of truth
+- [ ] Only Tackle tokens used (Color, Elevation, Iconography, Layout & Grid, Typography)
+- [ ] Only approved components/patterns used
+- [ ] Composition aligns to relevant `Page -` examples
+- [ ] No ad-hoc styles, one-off shadows, or custom spacing scales
+- [ ] Interaction patterns align with component intent (e.g., modal types, menu/button semantics)
+
+---
+
+## 7) Prompt Footer (Auto-appended to Every Request)
+
+> Use only Tackle.io design library tokens and components from:
+> https://www.figma.com/design/b88tCh5B2ujs1KYoJQsvOB/%E2%9A%9B%EF%B8%8F-Tackle-Design-Library?node-id=0-1&t=xpOhyCK3Lrz357je-1
+> Do not create new visual styles. Follow component and token constraints in this spec.
+> Use `Page -` prefixed pages as composite guidance for page-level structure.

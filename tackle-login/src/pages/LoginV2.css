@@ -1,0 +1,355 @@
+/*
+ * Login V2 — Split Panel
+ * Layout: LeftPanelLayout (brand) + ContentLayout (form)
+ * Left panel uses elevation-500L intent (shadow on right edge).
+ * Right panel uses elevation-500R intent (shadow on left edge).
+ */
+
+/* ── Page wrapper ── */
+.v2-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* ══════════════════════════════════════════════
+ * LEFT PANEL — LeftPanelLayout
+ * Background: #002b41 (deepest Tackle navy — downstream app theme-color)
+ * with a subtle gradient toward brand primary #063649
+ * Elevation: 500L (shadow on the right edge toward form)
+ * ══════════════════════════════════════════════ */
+.v2-left {
+  background: linear-gradient(160deg, var(--color-neutral-700) 0%, var(--color-neutral-600) 100%);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--elevation-500l);
+}
+
+/* Decorative mesh/dot grid overlay */
+.v2-left__mesh {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px);
+  background-size: 32px 32px;
+  pointer-events: none;
+}
+
+/* Floating brand orbs — using real Tackle teal #1fadad */
+.v2-left__orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  pointer-events: none;
+}
+
+.v2-left__orb--1 {
+  width: 380px;
+  height: 380px;
+  background: var(--color-brand-teal-400);
+  top: -120px;
+  right: -80px;
+  opacity: 0.18;
+}
+
+.v2-left__orb--2 {
+  width: 300px;
+  height: 300px;
+  background: #FFB600;
+  bottom: -80px;
+  left: -60px;
+  opacity: 0.12;
+}
+
+/* Inner content */
+.v2-left__inner {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: var(--space-10) var(--space-10);
+  gap: var(--space-10);
+}
+
+/* Logo */
+.v2-left__logo {
+  flex-shrink: 0;
+}
+
+/* Hero text block */
+.v2-left__hero {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Badge chip — real Tackle teal #1fadad */
+.v2-left__badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(31, 173, 173, 0.18);
+  border: 1px solid rgba(31, 173, 173, 0.38);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-brand-teal-300);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  width: fit-content;
+}
+
+/* Headline */
+.v2-left__headline {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-neutral-000);
+  margin: 0;
+}
+
+/* Real brand teal #1fadad for accent */
+.v2-left__headline--accent {
+  color: var(--color-brand-teal-400);
+}
+
+/* Body */
+.v2-left__body {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.65);
+  line-height: var(--line-height-relaxed);
+  margin: 0;
+  max-width: 380px;
+}
+
+/* Feature list */
+.v2-left__features {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  padding: 0;
+  margin: 0;
+}
+
+.v2-left__feature {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.80);
+  font-weight: var(--font-weight-semibold);
+}
+
+.v2-left__feature-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: var(--radius-base);
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+/* Testimonial quote — amber left border echoes the logo icon mark color */
+.v2-left__quote {
+  margin-top: auto;
+  padding: var(--space-5);
+  background: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid #FFB600;
+  border-radius: 0 var(--radius-base) var(--radius-base) 0;
+}
+
+.v2-left__quote p {
+  font-size: var(--font-size-sm);
+  color: rgba(255, 255, 255, 0.85);
+  line-height: var(--line-height-relaxed);
+  font-style: italic;
+  margin: 0 0 var(--space-3) 0;
+}
+
+.v2-left__quote footer {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.50);
+}
+
+/* ══════════════════════════════════════════════
+ * RIGHT PANEL — ContentLayout
+ * Background: --color-neutral-000 (white)
+ * ══════════════════════════════════════════════ */
+.v2-right {
+  background-color: var(--color-neutral-000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-6);
+}
+
+.v2-right__inner {
+  width: 100%;
+  max-width: 420px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* Mobile logo — hidden on desktop */
+.v2-right__mobile-logo {
+  display: none;
+  justify-content: center;
+  margin-bottom: var(--space-2);
+}
+
+/* Header */
+.v2-right__header {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.v2-right__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.v2-right__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+  margin: 0;
+  line-height: var(--line-height-snug);
+}
+
+/* Alert */
+.v2-right__alert {
+  /* inherits Alert styles */
+}
+
+/* Form */
+.v2-right__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.v2-right__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* Separator */
+.v2-right__sep {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.v2-right__sep::before,
+.v2-right__sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-neutral-050);
+}
+
+/* SSO buttons */
+.v2-right__sso {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+/* Links — real Tackle teal */
+.v2-right__link {
+  color: var(--color-brand-teal-400);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.v2-right__link--sm {
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+}
+
+/* Footer */
+.v2-right__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+  text-align: center;
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-050);
+}
+
+.v2-right__footer p {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+  margin: 0;
+}
+
+.v2-right__legal {
+  font-size: var(--font-size-xs) !important;
+  color: var(--color-neutral-200) !important;
+}
+
+/* ══════════════════════════════════════════════
+ * RESPONSIVE — collapse to single column
+ * ══════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .v2-page {
+    grid-template-columns: 1fr;
+  }
+
+  .v2-left {
+    display: none;
+  }
+
+  .v2-right {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: var(--space-10) var(--space-5);
+    background-color: var(--color-neutral-010);
+  }
+
+  .v2-right__mobile-logo {
+    display: flex;
+  }
+
+  .v2-right__inner {
+    background-color: var(--color-neutral-000);
+    border: var(--card-border);
+    border-radius: var(--card-border-radius);
+    padding: var(--space-8) var(--space-6);
+    box-shadow: var(--elevation-300);
+    max-width: 440px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .v2-left__inner {
+    padding: var(--space-8) var(--space-8);
+    gap: var(--space-8);
+  }
+
+  .v2-left__headline {
+    font-size: var(--font-size-2xl);
+  }
+
+  .v2-left__quote {
+    display: none;
+  }
+}

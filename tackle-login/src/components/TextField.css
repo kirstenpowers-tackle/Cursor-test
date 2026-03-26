@@ -1,0 +1,131 @@
+/* Tackle TextField — maps to design-library TextField component */
+.tk-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tk-field__label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-neutral-500);
+  line-height: var(--line-height-snug);
+}
+
+.tk-field__label--sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.tk-field__control {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.tk-field__input {
+  width: 100%;
+  height: var(--input-height);
+  padding: 0 var(--space-4);
+  background-color: var(--input-bg);
+  border: 1.5px solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-600);
+  outline: none;
+  transition: border-color 150ms ease, box-shadow 150ms ease;
+}
+
+.tk-field__input::placeholder {
+  color: var(--color-neutral-200);
+}
+
+.tk-field__input:hover:not(:disabled) {
+  border-color: var(--color-neutral-200);
+}
+
+.tk-field__input:focus {
+  border-color: var(--color-brand-teal-400);
+  box-shadow: var(--input-focus-ring);
+}
+
+.tk-field__input:disabled {
+  background-color: var(--color-neutral-020);
+  color: var(--color-neutral-200);
+  cursor: not-allowed;
+}
+
+.tk-field__input--has-left-icon {
+  padding-left: calc(var(--space-10) + var(--space-1));
+}
+
+.tk-field__input--has-right-el {
+  padding-right: var(--space-10);
+}
+
+/* Error state */
+.tk-field--error .tk-field__input {
+  border-color: var(--color-semantic-error-500);
+}
+
+.tk-field--error .tk-field__input:focus {
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.20);
+}
+
+/* Icons */
+.tk-field__icon {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  color: var(--color-neutral-200);
+  pointer-events: none;
+}
+
+.tk-field__icon--left {
+  left: var(--space-3);
+}
+
+.tk-field__icon--right {
+  right: var(--space-3);
+  pointer-events: auto;
+}
+
+/* Password toggle */
+.tk-field__pwd-toggle {
+  background: none;
+  border: none;
+  padding: var(--space-1);
+  cursor: pointer;
+  color: var(--color-neutral-300);
+  display: flex;
+  align-items: center;
+  border-radius: var(--radius-sm);
+  transition: color 150ms ease;
+}
+
+.tk-field__pwd-toggle:hover {
+  color: var(--color-neutral-500);
+}
+
+.tk-field__pwd-toggle:focus-visible {
+  outline: 2px solid var(--color-brand-primary-500);
+  outline-offset: 1px;
+}
+
+/* Helper / error text */
+.tk-field__hint {
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-300);
+  line-height: var(--line-height-snug);
+}
+
+.tk-field__hint--error {
+  color: var(--color-semantic-error-600);
+}

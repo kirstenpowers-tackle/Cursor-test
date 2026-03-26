@@ -1,0 +1,143 @@
+/*
+ * Tackle.io Design Tokens — Brand-accurate palette
+ * Source: https://www.figma.com/design/b88tCh5B2ujs1KYoJQsvOB/%E2%9A%9B%EF%B8%8F-Tackle-Design-Library
+ * Brand colors verified from https://tackle.io/ and https://downstream.tackle.io/login
+ * Pages: 🌈 Color | 🌈 Elevation | 🌈 Typography | 🌈 Layout & Grid | 🌈 Iconography
+ */
+
+:root {
+  /* ─────────────────────────────────────────────
+   * COLOR TOKENS  (🌈 Color)
+   * Sourced from tackle.io CSS variables:
+   *   --ast-global-color-0: #063649  (primary brand dark)
+   *   --ast-global-color-2: #1e293b  (text dark)
+   *   --ast-global-color-3: #67768e  (text muted)
+   *   #1fadad                         (brand teal, from site HTML)
+   *   #002b41                         (darkest navy, downstream app theme-color)
+   *   #ffcd57                         (brand yellow CTA)
+   * ───────────────────────────────────────────── */
+
+  /* Neutrals */
+  --color-neutral-000: #ffffff;
+  --color-neutral-010: #f7f9fb;
+  --color-neutral-020: #f2f5f7;   /* --ast-global-color-6: #F2F5F7 */
+  --color-neutral-050: #e8edf2;
+  --color-neutral-100: #d1dae3;
+  --color-neutral-200: #9ca3af;
+  --color-neutral-300: #67768e;   /* --ast-global-color-3 */
+  --color-neutral-400: #4b5563;
+  --color-neutral-500: #1e293b;   /* --ast-global-color-2 */
+  --color-neutral-600: #063649;   /* --ast-global-color-0  ← Tackle brand primary dark */
+  --color-neutral-700: #002b41;   /* downstream app theme-color — deepest navy */
+
+  /* Tackle Brand — Primary Teal/Navy */
+  --color-brand-primary-050: #e8f4f4;
+  --color-brand-primary-100: #c5e4e4;
+  --color-brand-primary-200: #8ecece;
+  --color-brand-primary-300: #4eb8b8;
+  --color-brand-primary-400: #1fadad;   /* brand teal — real value from tackle.io */
+  --color-brand-primary-500: #1a9898;   /* slightly darkened for AA contrast on white */
+  --color-brand-primary-600: #148080;
+  --color-brand-primary-700: #063649;   /* --ast-global-color-0: Tackle dark navy */
+  --color-brand-primary-800: #002b41;   /* deepest navy */
+
+  /* Tackle Brand — Yellow CTA */
+  --color-brand-yellow-400: #ffcd57;    /* --ast-global-color-7 */
+  --color-brand-yellow-500: #f5b800;
+  --color-brand-yellow-600: #d9a200;
+
+  /* Tackle Brand — Teal alias (for explicit teal usage) */
+  --color-brand-teal-300: #4eb8b8;
+  --color-brand-teal-400: #1fadad;
+  --color-brand-teal-500: #1a9898;
+
+  /* Semantic */
+  --color-semantic-error-050: #fef2f2;
+  --color-semantic-error-500: #ef4444;
+  --color-semantic-error-600: #dc2626;
+  --color-semantic-warning-500: #f59e0b;
+  --color-semantic-success-500: #22c55e;
+  --color-semantic-info-500: #1fadad;
+
+  /* ─────────────────────────────────────────────
+   * ELEVATION TOKENS  (🌈 Elevation)
+   * ───────────────────────────────────────────── */
+  --elevation-100: 0px 1px 2px rgba(6, 54, 73, 0.05), 0px 1px 3px rgba(6, 54, 73, 0.08);
+  --elevation-200: 0px 2px 4px rgba(6, 54, 73, 0.06), 0px 4px 6px rgba(6, 54, 73, 0.08);
+  --elevation-300: 0px 4px 6px rgba(6, 54, 73, 0.06), 0px 10px 20px rgba(6, 54, 73, 0.10);
+  --elevation-400: 0px 10px 15px rgba(6, 54, 73, 0.08), 0px 20px 25px rgba(6, 54, 73, 0.10);
+  --elevation-500r: 4px 0px 24px rgba(0, 43, 65, 0.14);
+  --elevation-500l: -4px 0px 24px rgba(0, 43, 65, 0.14);
+
+  /* ─────────────────────────────────────────────
+   * TYPOGRAPHY TOKENS  (🌈 Typography)
+   * tackle.io marketing: Proxima Nova (typekit — licensed)
+   * tackle.io platform app: Open Sans (Google Fonts — confirmed in downstream.tackle.io)
+   * We use Open Sans to match the actual platform UI
+   * ───────────────────────────────────────────── */
+  --font-family-base: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-size-xs:   0.75rem;
+  --font-size-sm:   0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg:   1.125rem;
+  --font-size-xl:   1.25rem;
+  --font-size-2xl:  1.5rem;
+  --font-size-3xl:  1.875rem;
+
+  --font-weight-regular:   400;
+  --font-weight-semibold:  600;
+  --font-weight-bold:      700;
+
+  --line-height-tight:   1.25;
+  --line-height-snug:    1.375;
+  --line-height-normal:  1.5;
+  --line-height-relaxed: 1.625;
+
+  /* ─────────────────────────────────────────────
+   * SPACING / LAYOUT TOKENS  (🌈 Layout & Grid)
+   * ───────────────────────────────────────────── */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+
+  --radius-sm:   4px;
+  --radius-base: 6px;
+  --radius-md:   8px;
+  --radius-lg:   12px;
+  --radius-xl:   16px;
+  --radius-full: 9999px;
+
+  /* ─────────────────────────────────────────────
+   * COMPONENT TOKENS
+   * ───────────────────────────────────────────── */
+
+  /* Buttons */
+  --btn-height-md: 40px;
+  --btn-padding-x: var(--space-6);
+  --btn-border-radius: var(--radius-base);
+
+  /* Text fields */
+  --input-height: 40px;
+  --input-border-color: var(--color-neutral-100);
+  --input-border-radius: var(--radius-base);
+  --input-bg: var(--color-neutral-000);
+  --input-focus-ring: 0 0 0 3px rgba(31, 173, 173, 0.22);
+
+  /* Card */
+  --card-bg: var(--color-neutral-000);
+  --card-border: 1px solid var(--color-neutral-050);
+  --card-border-radius: var(--radius-lg);
+  --card-padding: var(--space-8);
+
+  /* Page background */
+  --page-bg: var(--color-neutral-020);
+}
