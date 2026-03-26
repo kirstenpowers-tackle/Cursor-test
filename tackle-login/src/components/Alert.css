@@ -1,0 +1,55 @@
+/* Tackle Alert — maps to design-library Alert component */
+.tk-alert {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border-radius: var(--radius-base);
+  border: 1px solid transparent;
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-snug);
+}
+
+.tk-alert--error {
+  background-color: var(--color-semantic-error-050);
+  border-color: rgba(239, 68, 68, 0.25);
+  color: var(--color-semantic-error-600);
+}
+
+.tk-alert--warning {
+  background-color: #fffbeb;
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #92400e;
+}
+
+.tk-alert--success {
+  background-color: #f0fdf4;
+  border-color: rgba(34, 197, 94, 0.25);
+  color: #15803d;
+}
+
+.tk-alert--info {
+  background-color: var(--color-brand-primary-050);
+  border-color: rgba(37, 99, 235, 0.20);
+  color: var(--color-brand-primary-600);
+}
+
+.tk-alert__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1px;
+}
+
+.tk-alert__body {
+  flex: 1;
+  min-width: 0;
+}
+
+.tk-alert__title {
+  font-weight: var(--font-weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.tk-alert__content {
+  color: inherit;
+}

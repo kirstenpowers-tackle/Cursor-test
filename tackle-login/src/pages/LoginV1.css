@@ -1,0 +1,173 @@
+/*
+ * Login V1 — Centered Card
+ * Layout: ContentLayout (full-viewport centering) + Tackle Card (elevation-300)
+ * All values map to design tokens from tokens.css
+ */
+
+/* ── Page wrapper ── */
+.v1-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-neutral-010);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative radial gradient — brand blue fading to neutral */
+.v1-page__bg {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(37, 99, 235, 0.08) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 40% at 80% 110%, rgba(20, 184, 166, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* ── Content area (ContentLayout) ── */
+.v1-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: var(--space-8) var(--space-4);
+}
+
+/* ── Tackle Card ── */
+/* Elevation: 300 (selected/prominent card) */
+.v1-card {
+  width: 100%;
+  max-width: 440px;
+  background-color: var(--card-bg);
+  border: var(--card-border);
+  border-radius: var(--card-border-radius);
+  padding: var(--space-10) var(--card-padding);
+  box-shadow: var(--elevation-300);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+/* ── Card header ── */
+.v1-card__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-4);
+  text-align: center;
+}
+
+/* Teal accent divider under logo */
+.v1-card__divider {
+  width: 48px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-brand-primary-500), var(--color-brand-teal-500));
+  border-radius: var(--radius-full);
+}
+
+.v1-card__title {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-700);
+  line-height: var(--line-height-tight);
+  margin: 0;
+}
+
+.v1-card__subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+  line-height: var(--line-height-snug);
+  margin: 0;
+}
+
+/* ── Alert ── */
+.v1-card__alert {
+  /* Alert already has its own spacing; no extra margin needed */
+}
+
+/* ── Form ── */
+.v1-card__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+/* Remember + forgot row */
+.v1-card__row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+/* ── Separator ── */
+.v1-card__sep {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  color: var(--color-neutral-200);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.v1-card__sep::before,
+.v1-card__sep::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background-color: var(--color-neutral-050);
+}
+
+/* ── Links ── */
+.v1-card__link {
+  color: var(--color-brand-primary-500);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+}
+
+.v1-card__link--sm {
+  font-size: var(--font-size-xs);
+  white-space: nowrap;
+}
+
+/* ── Footer ── */
+.v1-card__footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  text-align: center;
+}
+
+.v1-card__footer p {
+  font-size: var(--font-size-sm);
+  color: var(--color-neutral-300);
+  margin: 0;
+}
+
+.v1-card__legal {
+  font-size: var(--font-size-xs) !important;
+  color: var(--color-neutral-200) !important;
+  line-height: var(--line-height-relaxed);
+}
+
+/* ── Page footer ── */
+.v1-page__footer {
+  padding: var(--space-6) var(--space-4);
+  font-size: var(--font-size-xs);
+  color: var(--color-neutral-200);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 480px) {
+  .v1-card {
+    padding: var(--space-8) var(--space-6);
+    border-radius: var(--radius-md);
+  }
+}
