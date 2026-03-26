@@ -56,7 +56,7 @@ const LoginV1: React.FC = () => {
 
           {/* Card header */}
           <header className="v1-card__header">
-            <TackleLogo variant="full" color="dark" height={38} />
+            <TackleLogo variant="dark" height={38} />
             <div className="v1-card__divider" aria-hidden="true" />
             <h1 className="v1-card__title">Welcome back</h1>
             <p className="v1-card__subtitle">

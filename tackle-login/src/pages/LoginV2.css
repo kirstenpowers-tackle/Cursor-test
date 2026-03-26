@@ -15,11 +15,12 @@
 
 /* ══════════════════════════════════════════════
  * LEFT PANEL — LeftPanelLayout
- * Background: --color-brand-primary-700 (Tackle navy)
+ * Background: #002b41 (deepest Tackle navy — downstream app theme-color)
+ * with a subtle gradient toward brand primary #063649
  * Elevation: 500L (shadow on the right edge toward form)
  * ══════════════════════════════════════════════ */
 .v2-left {
-  background-color: var(--color-brand-primary-700);
+  background: linear-gradient(160deg, var(--color-neutral-700) 0%, var(--color-neutral-600) 100%);
   position: relative;
   overflow: hidden;
   box-shadow: var(--elevation-500l);
@@ -35,30 +36,30 @@
   pointer-events: none;
 }
 
-/* Floating brand orbs */
+/* Floating brand orbs — using real Tackle teal #1fadad */
 .v2-left__orb {
   position: absolute;
   border-radius: 50%;
-  filter: blur(60px);
+  filter: blur(70px);
   pointer-events: none;
-  opacity: 0.35;
 }
 
 .v2-left__orb--1 {
-  width: 400px;
-  height: 400px;
-  background: var(--color-brand-primary-500);
-  top: -100px;
-  right: -100px;
+  width: 380px;
+  height: 380px;
+  background: var(--color-brand-teal-400);
+  top: -120px;
+  right: -80px;
+  opacity: 0.18;
 }
 
 .v2-left__orb--2 {
-  width: 320px;
-  height: 320px;
-  background: var(--color-brand-teal-500);
-  bottom: -60px;
+  width: 300px;
+  height: 300px;
+  background: #FFB600;
+  bottom: -80px;
   left: -60px;
-  opacity: 0.25;
+  opacity: 0.12;
 }
 
 /* Inner content */
@@ -84,17 +85,17 @@
   gap: var(--space-5);
 }
 
-/* Badge chip */
+/* Badge chip — real Tackle teal #1fadad */
 .v2-left__badge {
   display: inline-flex;
   align-items: center;
   padding: var(--space-1) var(--space-3);
-  background: rgba(20, 184, 166, 0.20);
-  border: 1px solid rgba(20, 184, 166, 0.40);
+  background: rgba(31, 173, 173, 0.18);
+  border: 1px solid rgba(31, 173, 173, 0.38);
   border-radius: var(--radius-full);
   font-size: var(--font-size-xs);
   font-weight: var(--font-weight-semibold);
-  color: var(--color-brand-teal-400);
+  color: var(--color-brand-teal-300);
   letter-spacing: 0.06em;
   text-transform: uppercase;
   width: fit-content;
@@ -109,6 +110,7 @@
   margin: 0;
 }
 
+/* Real brand teal #1fadad for accent */
 .v2-left__headline--accent {
   color: var(--color-brand-teal-400);
 }
@@ -153,12 +155,12 @@
   flex-shrink: 0;
 }
 
-/* Testimonial quote */
+/* Testimonial quote — amber left border echoes the logo icon mark color */
 .v2-left__quote {
   margin-top: auto;
   padding: var(--space-5);
   background: rgba(255, 255, 255, 0.06);
-  border-left: 3px solid var(--color-brand-teal-500);
+  border-left: 3px solid #FFB600;
   border-radius: 0 var(--radius-base) var(--radius-base) 0;
 }
 
@@ -270,9 +272,9 @@
   gap: var(--space-3);
 }
 
-/* Links */
+/* Links — real Tackle teal */
 .v2-right__link {
-  color: var(--color-brand-primary-500);
+  color: var(--color-brand-teal-400);
   font-size: var(--font-size-sm);
   font-weight: var(--font-weight-semibold);
 }

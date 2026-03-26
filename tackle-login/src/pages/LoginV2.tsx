@@ -62,7 +62,7 @@ const LoginV2: React.FC = () => {
         <div className="v2-left__inner">
           {/* Logo — light variant */}
           <div className="v2-left__logo">
-            <TackleLogo variant="full" color="light" height={40} />
+            <TackleLogo variant="light" height={40} />
           </div>
 
           {/* Hero content */}
@@ -113,7 +113,7 @@ const LoginV2: React.FC = () => {
 
           {/* Mobile-only logo */}
           <div className="v2-right__mobile-logo" aria-hidden="true">
-            <TackleLogo variant="full" color="dark" height={34} />
+            <TackleLogo variant="dark" height={34} />
           </div>
 
           {/* Form header */}

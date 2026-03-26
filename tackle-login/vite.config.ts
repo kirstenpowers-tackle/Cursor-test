@@ -7,7 +7,7 @@ export default defineConfig(({ command }) => ({
   plugins: [react()],
   base: command === 'build' ? '/Cursor-test/' : '/',
   server: {
-    allowedHosts: 'all',
+    allowedHosts: true,
     host: '0.0.0.0',
     port: 5173,
   },

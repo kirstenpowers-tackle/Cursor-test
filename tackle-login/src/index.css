@@ -24,11 +24,11 @@ body {
 }
 
 a {
-  color: var(--color-brand-primary-500);
+  color: var(--color-brand-teal-400);
   text-decoration: none;
 }
 
 a:hover {
   text-decoration: underline;
-  color: var(--color-brand-primary-600);
+  color: var(--color-brand-teal-500);
 }

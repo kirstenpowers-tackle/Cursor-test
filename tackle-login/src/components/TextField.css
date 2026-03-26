@@ -52,7 +52,7 @@
 }
 
 .tk-field__input:focus {
-  border-color: var(--color-brand-primary-500);
+  border-color: var(--color-brand-teal-400);
   box-shadow: var(--input-focus-ring);
 }
 

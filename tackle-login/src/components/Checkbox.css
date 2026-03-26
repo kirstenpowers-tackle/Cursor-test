@@ -20,16 +20,16 @@
 }
 
 .tk-checkbox__input:hover {
-  border-color: var(--color-brand-primary-500);
+  border-color: var(--color-brand-teal-400);
 }
 
 .tk-checkbox__input:focus-visible {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.20);
+  box-shadow: 0 0 0 3px rgba(31, 173, 173, 0.20);
 }
 
 .tk-checkbox__input:checked {
-  background-color: var(--color-brand-primary-500);
-  border-color: var(--color-brand-primary-500);
+  background-color: var(--color-brand-primary-700);
+  border-color: var(--color-brand-primary-700);
 }
 
 .tk-checkbox__input:checked::after {
